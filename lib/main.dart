@@ -3,6 +3,7 @@ import 'package:protfolio_app/banner/banner.dart';
 import 'package:protfolio_app/splashScreen.dart';
 
 import 'homePage/homePage.dart';
+import 'protofolio/protofolio.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => const SplashScreen(),
         '/banner': (context) => const BannerPage(),
         '/home': (context) => const HomePage(),
+        '/protofolio': (context) => const Protofolio()
       },
     );
   }
