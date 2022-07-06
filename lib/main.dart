@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:protfolio_app/banner/banner.dart';
 import 'package:protfolio_app/splashScreen.dart';
+
+import 'homePage/homePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        '/': (context) => SplashScreen(),
+        '/': (context) => const SplashScreen(),
+        '/banner': (context) => const BannerPage(),
+        '/home': (context) => const HomePage(),
       },
     );
   }
