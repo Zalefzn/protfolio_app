@@ -9,11 +9,29 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreen extends State<SplashScreen> {
+  void initState() {
+    Future.delayed(
+      const Duration(seconds: 5),
+      () => Navigator.pushNamed(context, '/banner'),
+    );
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bColor1,
-      body: Container(),
+      body: Center(
+        child: Container(
+          height: 233,
+          width: 233,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              image: const DecorationImage(
+                image: AssetImage('assets/logo.png'),
+              )),
+        ),
+      ),
     );
   }
 }

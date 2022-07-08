@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Banner extends StatefulWidget {
-  const Banner({Key? key}) : super(key: key);
+class BannerPage extends StatefulWidget {
+  const BannerPage({Key? key}) : super(key: key);
 
   @override
-  State<Banner> createState() => _Banner();
+  State<BannerPage> createState() => _BannerPage();
 }
 
-class _Banner extends State<Banner> {
+class _BannerPage extends State<BannerPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+        body: Center(
+      child: Text('banner'),
+    ));
   }
 }
