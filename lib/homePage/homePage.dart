@@ -1,4 +1,6 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart' as launcher;
 import 'package:protfolio_app/utilities/screenSize/sizeScreen.dart';
 import 'package:protfolio_app/utilities/theme/theme.dart';
 
@@ -9,6 +11,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State<HomePage> {
+  void launchURL(String url) async {
+    url = Uri.encodeFull(url);
+    if (await launcher.canLaunchUrl(Uri.parse(url))) {
+      await launcher.launchUrl(Uri.parse(url));
+    } else {
+      throw 'Unknown error, can\'t launch the URL.';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -45,7 +56,32 @@ class _HomePage extends State<HomePage> {
                           fontSize: 22,
                           fontWeight: FontWeight.w800)),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      showModalBottomSheet(
+                          barrierColor: Colors.black.withOpacity(0.1),
+                          backgroundColor: Colors.black.withOpacity(0.6),
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(70),
+                              topRight: Radius.circular(70),
+                            ),
+                          ),
+                          isScrollControlled: true,
+                          enableDrag: true,
+                          context: context,
+                          builder: (context) {
+                            return BackdropFilter(
+                                filter:
+                                    ImageFilter.blur(sigmaX: 2.0, sigmaY: 2.0),
+                                child: Container(
+                                  height: SizeConfig.blockVertical * 55,
+                                  decoration: const BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(70),
+                                          topRight: Radius.circular(70))),
+                                ));
+                          });
+                    },
                     child: Text('Read More',
                         style: TextStyle(
                             color: Colors.amber[400],
