@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:protfolio_app/detailPage/detailPage.dart';
+import 'package:protfolio_app/protofolio_card/protofolio_card.dart';
 import 'package:protfolio_app/utilities/screenSize/sizeScreen.dart';
-import 'package:protfolio_app/utilities/theme/theme.dart';
 
 class Protofolio extends StatefulWidget {
   const Protofolio({Key? key}) : super(key: key);
@@ -37,64 +38,44 @@ class _Protofolio extends State<Protofolio> {
   }
 
   Widget pictData() {
-    return Row(
-      children: [
-        Stack(
+    return SingleChildScrollView(
+      child: Container(
+        height: SizeConfig.blockVertical * 70,
+        width: SizeConfig.blockHorizontal * 100,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
           children: [
-            Container(
-              margin: EdgeInsets.only(left: SizeConfig.blockHorizontal * 10),
-              height: SizeConfig.blockVertical * 60,
-              width: SizeConfig.blockHorizontal * 80,
-              decoration: BoxDecoration(
-                  image: const DecorationImage(
-                      opacity: 0.7,
-                      fit: BoxFit.cover,
-                      image: AssetImage('assets/post9.png')),
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(50)),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const DetailPage()));
+                });
+              },
+              child: CardProto('assets/post1.png', '4.8',
+                  'explore what you want\nto see in this page'),
             ),
-            Container(
-                margin: EdgeInsets.only(
-                    left: SizeConfig.blockHorizontal * 59,
-                    top: SizeConfig.blockVertical * 2),
-                height: SizeConfig.blockVertical * 5,
-                width: SizeConfig.blockHorizontal * 25,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.black.withOpacity(0.2)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(Icons.star, color: Colors.yellow),
-                    SizedBox(width: SizeConfig.blockHorizontal * 1),
-                    const Text('4.8',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                        ))
-                  ],
-                )),
-            Container(
-                margin: EdgeInsets.only(
-                    top: SizeConfig.blockVertical * 55,
-                    left: SizeConfig.blockHorizontal * 28),
-                height: SizeConfig.blockVertical * 8,
-                width: SizeConfig.blockHorizontal * 45,
-                decoration: BoxDecoration(
-                  color: Colors.amber[400],
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: const Center(
-                  child: Text('Explore',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700)),
-                )),
+            CardProto('assets/post2.png', '4.5',
+                'explore what you want\nto see in this page'),
+            CardProto('assets/post3.png', '4.4',
+                'explore what you want\nto see in this page'),
+            CardProto('assets/post10.png', '4.7',
+                'explore what you want\nto see in this page'),
+            CardProto('assets/post5.png', '4.6',
+                'explore what you want\nto see in this page'),
+            CardProto('assets/post6.png', '4.4',
+                'explore what you want\nto see in this page'),
+            CardProto('assets/post11.png', '4.5',
+                'explore what you want\nto see in this page'),
+            CardProto('assets/post7.png', '4.7',
+                'explore what you want\nto see in this page'),
+            CardProto('assets/post4.png', '4.3',
+                'explore what you want\nto see in this page')
           ],
         ),
-      ],
+      ),
     );
   }
 
