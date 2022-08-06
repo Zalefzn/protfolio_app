@@ -25,8 +25,6 @@ class _HomePage extends State<HomePage> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
 
-    //for show button model sheet
-
     //bottom content
     Widget buttomContent() {
       return Row(

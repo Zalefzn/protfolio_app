@@ -51,28 +51,153 @@ class _Protofolio extends State<Protofolio> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const DetailPage()));
+                          builder: (context) => DetailPage(
+                              'assets/post1.png',
+                              'Social Media',
+                              'description',
+                              'apa aja',
+                              '4.8')));
                 });
               },
               child: CardProto('assets/post1.png', '4.8',
                   'explore what you want\nto see in this page'),
             ),
-            CardProto('assets/post2.png', '4.5',
-                'explore what you want\nto see in this page'),
-            CardProto('assets/post3.png', '4.4',
-                'explore what you want\nto see in this page'),
-            CardProto('assets/post10.png', '4.7',
-                'explore what you want\nto see in this page'),
-            CardProto('assets/post5.png', '4.6',
-                'explore what you want\nto see in this page'),
-            CardProto('assets/post6.png', '4.4',
-                'explore what you want\nto see in this page'),
-            CardProto('assets/post11.png', '4.5',
-                'explore what you want\nto see in this page'),
-            CardProto('assets/post7.png', '4.7',
-                'explore what you want\nto see in this page'),
-            CardProto('assets/post4.png', '4.3',
-                'explore what you want\nto see in this page')
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                              'assets/post2.png',
+                              'Social Media',
+                              'description',
+                              'apa aja',
+                              '4.5')));
+                });
+              },
+              child: CardProto('assets/post2.png', '4.5',
+                  'explore what you want\nto see in this page'),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                              'assets/post3.png',
+                              'Social Media',
+                              'description',
+                              'apa aja',
+                              '4.4')));
+                });
+              },
+              child: CardProto('assets/post3.png', '4.4',
+                  'explore what you want\nto see in this page'),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                              'assets/post4.png',
+                              'Social Media',
+                              'description',
+                              'apa aja',
+                              '4.7')));
+                });
+              },
+              child: CardProto('assets/post10.png', '4.7',
+                  'explore what you want\nto see in this page'),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                              'assets/post5.png',
+                              'Social Media',
+                              'description',
+                              'apa aja',
+                              '4.6')));
+                });
+              },
+              child: CardProto('assets/post5.png', '4.6',
+                  'explore what you want\nto see in this page'),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                              'assets/post6.png',
+                              'Social Media',
+                              'description',
+                              'apa aja',
+                              '4.4')));
+                });
+              },
+              child: CardProto('assets/post6.png', '4.4',
+                  'explore what you want\nto see in this page'),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                              'assets/post11.png',
+                              'Social Media',
+                              'description',
+                              'apa aja',
+                              '4.5')));
+                });
+              },
+              child: CardProto('assets/post11.png', '4.5',
+                  'explore what you want\nto see in this page'),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                              'assets/post7.png',
+                              'Social Media',
+                              'description',
+                              'apa aja',
+                              '4.7')));
+                });
+              },
+              child: CardProto('assets/post7.png', '4.7',
+                  'explore what you want\nto see in this page'),
+            ),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailPage(
+                              'assets/post4.png',
+                              'Social Media',
+                              'description',
+                              'apa aja',
+                              '4.3')));
+                });
+              },
+              child: CardProto('assets/post4.png', '4.3',
+                  'explore what you want\nto see in this page'),
+            )
           ],
         ),
       ),

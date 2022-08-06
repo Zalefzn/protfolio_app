@@ -12,6 +12,7 @@ class BannerPage extends StatefulWidget {
 
 class _BannerPage extends State<BannerPage> {
   bool loading = false;
+  bool changedColor = false;
 
   void initState() {
     Future.delayed(const Duration(milliseconds: 500), () {
@@ -56,7 +57,7 @@ class _BannerPage extends State<BannerPage> {
                 height: SizeConfig.blockVertical * 6.5,
                 width: SizeConfig.blockHorizontal * 70,
                 decoration: BoxDecoration(
-                    color: buttonColor,
+                    color: changedColor ? Colors.grey : buttonColor,
                     borderRadius: BorderRadius.circular(30)),
                 child: TextButton(
                     onPressed: () {
